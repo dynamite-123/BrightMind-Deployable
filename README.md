@@ -1,48 +1,76 @@
-## 🚀 Running the Frontend (Next.js)
+# BrightMind💡– Empowering Rural Education with AI
 
-To start the frontend locally, follow these steps:
+**BrightMind** is an AI-powered educational platform designed to bridge the learning gap in rural and under-resourced areas. Leveraging cutting-edge language models like **Gemini 2.0 Flash**, the platform provides accessible, engaging, and personalized learning experiences to both students and teachers.
 
-1. Open your terminal and navigate to the `frontend` directory:
-    ```bash
-    cd frontend
-    ```
+---
 
-2. Install the project dependencies (only required once):
-    ```bash
-    npm install
-    ```
+## 🚀 Features
 
-3. Start the development server:
-    ```bash
-    npm run dev
-    ```
+- 🔍 **AI-Generated Content Summaries**  
+  Quickly understand complex topics with concise summaries powered by Gemini 2.0 Flash.
 
-The frontend will be running at [http://localhost:3000](http://localhost:3000) by default.  
-Next.js supports **hot reloading**, so any changes you make in the code will instantly reflect in the browser.
+- ❓ **Doubt-Solving Chat Assistant**  
+  Real-time AI chat to help students and teachers clarify doubts instantly.
 
-## Running the Backend (Django)
+- 📝 **Quiz Generation**  
+  Automatically generate quizzes from lesson content to reinforce learning.
 
+- 📄 **Downloadable PDFs**  
+  Export summaries, quizzes, and notes as PDFs for offline use—ideal for areas with limited connectivity.
 
-1. Open your terminal and navigate to the `backend` directory to create a virtual environment:
-    ```bash
-    python -m venv venv
-    ```
-2. Activate venv:
-    ```bash
-    venv\Scripts\activate
-    ```
-3. Install dependencies
-    ```bash
-    pip install -r requirements.txt
-    ```
-4. Run the backend server
-   ```bash
-   python manage.py runserver
-   ```
-Note:
-Before you run the server the first time, run these two commands:
-    ```bash
-    python manage.py makemigrations
-    python manage.py migrate
-    ```
-The backend will be running at port 8000 by default.  
+- 🌐 **Multi-Platform Access**  
+  Built with **Next.js** for web and **React Native** for mobile—ensuring access across devices.
+
+- 🧠 **Teacher Toolkit**  
+  Access teaching aids, translated materials, and lesson plans tailored for rural contexts.
+
+- 🌍 **Multilingual Support**  
+  BrightMind breaks language barriers by offering educational content in multiple **regional languages**, ensuring inclusivity and better understanding for learners in diverse linguistic backgrounds.
+
+---
+
+### 🧱 Tech Stack
+
+**Frontend**  
+- 🌐 [Next.js](https://nextjs.org/) – React-based framework for server-side rendering and static websites  
+- 📱 [React Native](https://reactnative.dev/) – Cross-platform mobile app development  
+
+**Backend**  
+- 🐍 [Django REST Framework](https://www.django-rest-framework.org/) – Flexible and powerful framework for building Web APIs  
+- 🗃️ [SQLite](https://sqlite.org/) – A lightweight database for embedded apps  
+- 📊 [Pydantic](https://docs.pydantic.dev/) – Data validation and settings management using Python type annotations
+
+**AI Engine**  
+- 🤖 [Gemini 2.0 Flash](https://google.com) – AI model used for content generation (summaries, quizzes, chat)  
+- 🧠 [Pydantic AI](https://docs.pydantic.dev/latest/integrations/ai/) – Structured outputs with AI models for consistent, type-safe responses
+
+---
+
+## 🛠️ Installation
+
+### Backend – Django
+
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # or .\venv\Scripts\activate on Windows
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+
+### Frontend - Next.js
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Mobile - React Native
+
+```bash
+cd mobile
+npm install
+npx react-native run-android  # or run-ios
+```
