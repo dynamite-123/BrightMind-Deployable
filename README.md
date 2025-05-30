@@ -31,46 +31,21 @@
 
 ### 🧱 Tech Stack
 
-**Frontend**  
-- 🌐 [Next.js](https://nextjs.org/) – React-based framework for server-side rendering and static websites  
-- 📱 [React Native](https://reactnative.dev/) – Cross-platform mobile app development  
+**Frontend**
 
-**Backend**  
-- 🐍 [Django REST Framework](https://www.django-rest-framework.org/) – Flexible and powerful framework for building Web APIs  
-- 🗃️ [SQLite](https://sqlite.org/) – A lightweight database for embedded apps  
+- 🌐 [Next.js](https://nextjs.org/) – React-based framework for server-side rendering and static websites
+- 📱 [React Native](https://reactnative.dev/) – Cross-platform mobile app development
+
+**Backend**
+
+- 🐍 [Django REST Framework](https://www.django-rest-framework.org/) – Flexible and powerful framework for building Web APIs
+- 🗃️ [SQLite](https://sqlite.org/) – A lightweight database for embedded apps
 - 📊 [Pydantic](https://docs.pydantic.dev/) – Data validation and settings management using Python type annotations
 
-**AI Engine**  
-- 🤖 [Gemini 2.0 Flash](https://google.com) – AI model used for content generation (summaries, quizzes, chat)  
+**AI Engine**
+
+- 🤖 [Gemini 2.0 Flash](https://google.com) – AI model used for content generation (summaries, quizzes, chat)
 - 🧠 [Pydantic AI](https://docs.pydantic.dev/latest/integrations/ai/) – Structured outputs with AI models for consistent, type-safe responses
 
 ---
 
-## 🛠️ Installation
-
-### Backend – Django
-
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # or .\venv\Scripts\activate on Windows
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-```
-
-### Frontend - Next.js
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-### Mobile - React Native
-
-```bash
-cd mobile
-npm install
-npx react-native run-android  # or run-ios
-```

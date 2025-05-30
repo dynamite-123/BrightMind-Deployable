@@ -4,6 +4,7 @@ import os
 from pydantic import ValidationError
 from typing import Dict, Any
 from dotenv import load_dotenv
+
 if __name__ == "__main__":
     from schemas import ContentResponse, ContentSection
 else:
@@ -13,6 +14,7 @@ load_dotenv()
 
 # Configure Gemini API
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
 
 # Create a Gemini-based content generator (without using pydantic_ai.Agent)
 class ContentGenerator:
@@ -260,3 +262,6 @@ if __name__ == "__main__":
         print(json.dumps(content, indent=2))
     except ValueError as e:
         print(f"Error: {str(e)}")
+
+    def temp():
+        hp = {"sdfdsfiw": "dfds"}
