@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import { getApiUrl, createHeaders } from '../utils/api';
 
 // Define a type for quiz question objects
 interface QuizQuestion {
@@ -43,11 +44,11 @@ const QuizButton: React.FC<QuizButtonProps> = ({
         return;
       }
 
-      const response = await fetch('http://localhost:8000/api/generate-questions/', {
+      const response = await fetch(getApiUrl('/api/generate-questions/'), {
         method: 'POST',
         headers: {
+          ...createHeaders(),
           'Authorization': `Token ${token}`,
-          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
           content: content.summary + ' ' + content.sections.map((s: any) => s.content).join(' '),

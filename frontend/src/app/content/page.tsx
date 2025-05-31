@@ -9,6 +9,7 @@ import QuizButton from '../../components/QuizButton';
 import AskAIButton from '../../components/AskAIButton';
 import RecommendedVideos from '../../components/RecommendedVideo';
 import PDFGenerator from '../../components/PDFGenerator';
+import { getApiUrl, createHeaders } from '@/utils/api';
 
 interface Content {
   topic: string;
@@ -82,11 +83,11 @@ const ContentGenerationPage = () => {
           return;
         }
 
-        const response = await fetch('http://localhost:8000/api/user-contents/', {
+        const response = await fetch(getApiUrl('/api/user-contents/'), {
           method: 'GET',
           headers: {
+            ...createHeaders(),
             'Authorization': `Token ${token}`,
-            'Content-Type': 'application/json',
           },
         });
 
@@ -124,11 +125,11 @@ const ContentGenerationPage = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:8000/api/generate-content/', {
+      const response = await fetch(getApiUrl('/api/generate-content/'), {
         method: 'POST',
         headers: {
+          ...createHeaders(),
           'Authorization': `Token ${token}`,
-          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ topic, difficulty }),
       });
@@ -143,11 +144,11 @@ const ContentGenerationPage = () => {
       setContent(data);
 
       // Refresh search history after generating new content
-      const historyResponse = await fetch('http://localhost:8000/api/user-contents/', {
+      const historyResponse = await fetch(getApiUrl('/api/user-contents/'), {
         method: 'GET',
         headers: {
+          ...createHeaders(),
           'Authorization': `Token ${token}`,
-          'Content-Type': 'application/json',
         },
       });
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { Button } from './ui/button';
 import { Loader2 } from 'lucide-react';
+import { getApiUrl, createHeaders } from '../utils/api';
 
 interface PDFGeneratorProps {
   topic: string;
@@ -62,11 +63,11 @@ const PDFGenerator: React.FC<PDFGeneratorProps> = ({
         }
       };
       
-      const response = await fetch('http://localhost:8000/api/generate-lesson-pdf/', {
+      const response = await fetch(getApiUrl('/api/generate-lesson-pdf/'), {
         method: 'POST',
         headers: {
+          ...createHeaders(),
           'Authorization': `Token ${token}`,
-          'Content-Type': 'application/json',
         },
         body: JSON.stringify(requestData),
       });

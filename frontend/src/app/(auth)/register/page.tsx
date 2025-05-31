@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
+import { getApiUrl, createHeaders } from "@/utils/api";
 
 export default function RegisterPage() {
   const [username, setUsername] = useState("");
@@ -27,11 +28,9 @@ export default function RegisterPage() {
     setError("");
     
     try {
-      const response = await fetch('http://localhost:8000/api/signup/', {
+      const response = await fetch(getApiUrl('/api/signup/'), {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: createHeaders(),
         body: JSON.stringify({
           username,
           email,

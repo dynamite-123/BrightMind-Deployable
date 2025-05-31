@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import { MessageSquare, X, Send, ChevronRight } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getApiUrl, createHeaders } from '@/utils/api';
 
 interface AskAIButtonProps {
   currentContent: string;
@@ -85,10 +86,10 @@ const AskAIButton: React.FC<AskAIButtonProps> = ({
     
     try {
       // Make API call to your backend
-      const response = await fetch('http://localhost:8000/api/chatbot/', {
+      const response = await fetch(getApiUrl('/api/chatbot/'), {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          ...createHeaders(),
           Authorization: `Token ${token}`,
         },
         body: JSON.stringify({

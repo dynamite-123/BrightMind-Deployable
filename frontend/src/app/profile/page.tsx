@@ -5,6 +5,7 @@ import { useAuth } from '@/contexts/AuthContext'
 import ProfileForm from '@/components/profile/ProfileForm'
 import { useRouter } from 'next/navigation'
 import Navbar from '@/components/Navbar'
+import { getApiUrl, createHeaders } from '@/utils/api'
 
 type Profile = {
   user: {
@@ -34,8 +35,9 @@ export default function ProfilePage() {
 
       try {
         // API call to fetch profile
-        const response = await fetch('http://localhost:8000/api/profile/', {
+        const response = await fetch(getApiUrl('/api/profile/'), {
           headers: {
+            ...createHeaders(),
             'Authorization': `Token ${token}`
           }
         })
@@ -88,10 +90,10 @@ export default function ProfilePage() {
       const { bio, location } = profileData
       
       // API call to update profile
-      const response = await fetch('http://localhost:8000/api/profile/update/', {
+      const response = await fetch(getApiUrl('/api/profile/update/'), {
         method: 'PATCH',
         headers: {
-          'Content-Type': 'application/json',
+          ...createHeaders(),
           'Authorization': `Token ${token}`
         },
         body: JSON.stringify({

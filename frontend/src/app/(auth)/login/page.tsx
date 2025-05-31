@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
+import { getApiUrl, createHeaders } from "@/utils/api";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -27,11 +28,9 @@ export default function LoginPage() {
     setError("");
     
     try {
-      const response = await fetch('http://localhost:8000/api/login/', {
+      const response = await fetch(getApiUrl('/api/login/'), {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: createHeaders(),
         body: JSON.stringify({
           username,
           password

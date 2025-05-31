@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import { getApiUrl, createHeaders } from '../utils/api';
 
 interface VideoItem {
   title: string;
@@ -32,10 +33,10 @@ const RecommendedVideos: React.FC<RecommendedVideosProps> = ({ topic }) => {
           return;
         }
         
-        const response = await fetch('http://localhost:8000/api/video-links/', {
+        const response = await fetch(getApiUrl('/api/video-links/'), {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            ...createHeaders(),
             'Authorization': `Token ${token}`
           },
           body: JSON.stringify({ topic }),
