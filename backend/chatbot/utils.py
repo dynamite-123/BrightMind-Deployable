@@ -3,7 +3,7 @@ import google.generativeai as genai
 from pydantic_ai import Agent
 from pydantic_ai.providers.google_gla import GoogleGLAProvider
 from pydantic_ai.models.gemini import GeminiModel
-import json
+
 if __name__ == "__main__":
     from schemas import ChatResponse
 else:
