@@ -14,7 +14,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['brightmind-deployable.onrender.com', '*.brightmind-deployable.onrender.com', 'localhost', '127.0.0.1']
 
 # API Keys
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
