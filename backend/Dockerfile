@@ -26,6 +26,8 @@ COPY . .
 
 # Create a startup script to handle migrations and server startup
 RUN echo '#!/bin/bash \n\
+python manage.py makemigrations user_profiles \n\
+python manage.py makemigrations content_generation \n\
 python manage.py migrate --no-input \n\
 exec "$@"' > /app/entrypoint.sh && chmod +x /app/entrypoint.sh
 
