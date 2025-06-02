@@ -49,13 +49,12 @@ MIDDLEWARE = [
 ]
 
 # CORS Settings
-CORS_ALLOW_ALL_ORIGINS = True  # For development only, don't use in production
+# CORS_ALLOW_ALL_ORIGINS = True  # For development only, don't use in production
 
 # For production, specify allowed origins:
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "http://127.0.0.1:3000",
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "https://bright-mind-deployable.vercel.app"
+]
 
 CORS_ALLOW_HEADERS = [
     "accept",
