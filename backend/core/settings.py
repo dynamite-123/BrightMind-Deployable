@@ -55,7 +55,8 @@ MIDDLEWARE = [
 # For production, specify allowed origins:
 CORS_ALLOWED_ORIGINS = [
     "https://bright-mind-deployable.vercel.app",
-    "http://localhost:8000"
+    "http://localhost:8000",
+    "https://brightmindapp-77cef9a68ed8.herokuapp.com"
 ]
 
 CORS_ALLOW_HEADERS = [
