@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url # type: ignore
 
 # Load environment variables
 load_dotenv()
@@ -53,7 +54,8 @@ MIDDLEWARE = [
 
 # For production, specify allowed origins:
 CORS_ALLOWED_ORIGINS = [
-    "https://bright-mind-deployable.vercel.app"
+    "https://bright-mind-deployable.vercel.app",
+    "http://localhost:8000"
 ]
 
 CORS_ALLOW_HEADERS = [
@@ -91,9 +93,13 @@ ASGI_APPLICATION = 'core.asgi.application'
 
 # Database
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL')) or {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB', 'your_db_name'),
+        'USER': os.getenv('POSTGRES_USER', 'your_db_user'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'your_db_password'),
+        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
+        'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }
 }
 

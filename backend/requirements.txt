@@ -24,6 +24,7 @@ defusedxml==0.7.1
 Deprecated==1.2.18
 distro==1.9.0
 Django==5.2
+dj-database-url==2.1.0
 django-cors-headers==4.7.0
 djangorestframework==3.16.0
 eval_type_backport==0.2.2
@@ -66,6 +67,7 @@ pillow==11.2.1
 prompt_toolkit==3.0.50
 proto-plus==1.26.1
 protobuf==5.29.4
+psycopg2-binary==2.9.9
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
 pycparser==2.22
