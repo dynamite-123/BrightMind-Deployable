@@ -5,7 +5,7 @@ backend
 
 __pycache__
 
-migrations/
-**/migrations/
+# migrations/
+# **/migrations/
 
 db.sqlite3
