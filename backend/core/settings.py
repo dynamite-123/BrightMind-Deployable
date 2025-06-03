@@ -15,7 +15,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['brightmind-deployable.onrender.com', '*.brightmind-deployable.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'brightmind-deployable.onrender.com',
+    '*.brightmind-deployable.onrender.com',
+    'localhost',
+    'brightmindapp-77cef9a68ed8.herokuapp.com',
+]
 
 # API Keys
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
@@ -55,8 +60,6 @@ MIDDLEWARE = [
 # For production, specify allowed origins:
 CORS_ALLOWED_ORIGINS = [
     "https://bright-mind-deployable.vercel.app",
-    "http://localhost:8000",
-    "https://brightmindapp-77cef9a68ed8.herokuapp.com"
 ]
 
 CORS_ALLOW_HEADERS = [
